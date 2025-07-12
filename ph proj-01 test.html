@@ -3,86 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    
-    
+    <title>Cool Dark UI Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      /*Body styles*/  
-    .dm-sans-normal{
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    }
-
-    /*header stayles*/
-
-    header{
-        background-image: url("Hero-bg.png");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        padding-bottom: 200px;
-    
-    }   
-        /* nav styles*/
-        nav{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding:0px 100px;
-            
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; 
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; 
         }
-        .nav-logo{
-            font-weight: 1000;
-            font-size: 45px;
-            color: blue;
-        }
-    /*button styles*/
-        button{
 
-            background-color: blue;
-            color: azure;
-            padding: 10px 30px;
-            border: 0px;
-            border-radius: 5px;
-
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-       /*Banner styles*/
-       .banner-content{
-        max-width: 650px;
-        justify-self:center;
-       }
-        .banner-intro{
-            font-weight: 8000;
-            font-size: 45px;
-            color: black;
+
+        .text-center {
             text-align: center;
         }
-        .banner-btn{
-            margin-left: 250px;
+
+        .text-left {
+            text-align: left;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-end {
+            justify-content: flex-end;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .gap-8 {
+            gap: 32px; 
+        }
+
+        .gap-12 {
+            gap: 48px;
+        }
+
+        /* Spacing Utilities */
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-20 { margin-bottom: 80px; }
+
+        .py-8 { padding-top: 32px; padding-bottom: 32px; }
+        .py-12 { padding-top: 48px; padding-bottom: 48px; }
+        .py-16 { padding-top: 64px; padding-bottom: 64px; }
+        .py-24 { padding-top: 96px; padding-bottom: 96px; }
+        .px-4 { padding-left: 16px; padding-right: 16px; }
+
+        /* Hero Section */
+        .hero-section {
+            color:black;
+            position: relative;
+            overflow: hidden;
+            background-image: url('Hero-bg.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 40px;
+            margin-bottom: 80px; 
+        }
+
+        .logo {
+            font-size: 50px; 
+            font-weight: 900;
+            color: #6366F1; 
+        }
+
+        .signup-button {
+            background-color: #3B82F6; 
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .signup-button:hover {
+            background-color: #2563EB;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 70%; 
+            margin: 0 auto;
+            margin-bottom: 80px; 
+        }
+
+        .hero-content h3 {
+            font-weight: 700;
+            font-size: 50px; 
+            line-height: 1.25; 
+            margin-bottom: 24px; 
+        }
+
+        .stay-focused-button {
+            background-image: linear-gradient(to right, #6366F1, #8B5CF6); 
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, background-image 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .stay-focused-button:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+
+        /* Section Styling */
+        .section-white {
+            background-color: #fff;
+            padding: 64px 0; 
+        }
+
+        .section-light-blue {
+            background-color: #EFF6FF; 
+            padding: 64px 0; 
+        }
+
+        /* See It in Action Section */
+        .action-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 48px; 
+        }
+
+        .action-text h2 {
+            font-size: 36px; 
+            font-weight: bold; 
+            margin-bottom: 16px; 
+        }
+
+        .action-text p {
+            color: #4A5568;
+            font-size: 18px; 
+            margin-bottom: 32px;
+        }
+
+        .launch-button {
+            background-image: linear-gradient(to right, #6366F1, #8B5CF6);
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-image 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .launch-button:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+
+        .action-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 25px; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+        }
+
+        /* Statistics Section */
+        .stats-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1A202C;
+            margin-bottom: 48px; 
+        }
+
+        .stats-grid {
+            background-color: #e1e0fd;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 70%;
+            padding: 24px 35px;
+            margin-left: 170px;
+            border-radius: 15px;
+
+
+        }
+
+        
+        .stats-card p:first-child {
+            font-size: 48px; 
+            font-weight: 800; 
+            color: #2563EB; 
+            margin-bottom: 8px; 
+        }
+
+        .stats-card p:last-child {
+            color: #4A5568; 
+            font-size: 18px; 
+        }
+
+        /* Testimonials Section */
+        .testimonials-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1A202C;
+            margin-bottom: 48px; 
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px; 
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+            text-align: left;
+        }
+
+        .testimonial-card .stars {
+            display: flex;
+            color: #FBBF24; 
+            margin-bottom: 16px; 
+        }
+
+        .testimonial-card .stars img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .testimonial-card h3 {
+            font-size: 20px; 
+            font-weight: 600;
+            color: #1A202C;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card p {
+            color: #4A5568; 
+            margin-bottom: 16px; 
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .reviewer-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px; 
+        }
+
+        .reviewer-info div p:first-child {
+            font-weight: 500; 
+            color: #1A202C; 
+        }
+
+        .reviewer-info div p:last-child {
+            font-size: 14px;
+            color: #6B7280; 
+        }
+
+        /* Ready to focus better section */
+        .focus-section {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;  
+            
+        }
+        .focus-card{
+            background-color: white;
+            max-width: 100%;
+            margin: 0 100px;
+            border-radius: 15px;
+        }
+
+        .focus-text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            line-height: .5;
+        }
+        
+        .focus-text h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1A202C;
+            margin-bottom: 16px;
+        }
+
+        .focus-text p {
+            color: #4A5568;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .get-started-button {
+            background-image: linear-gradient(to right, #6366F1, #8B5CF6);
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-image 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .get-started-button:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+
+        .focus-image img {
+            max-width: 55%;
+            height: auto;
+            border-radius:20px;
+            margin-top: 50px;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Contact Form Section */
+        .contact-section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            align-items: center;
+            padding: 0 70px;
+        }
+
+        .contact-heading h2 {
+            font-size: 80px; 
+            font-weight: 600;
+            color: #1A202C;
+            margin-bottom: 16px;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 450px; 
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #374151; 
+            font-size: 14px; 
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: calc(100% - 24px); 
+            padding: 12px; 
+            border-radius: 8px; 
+            border: 1px solid #D1D5DB; 
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #3B82F6; 
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px; 
+        }
+
+        .contact-button {
+            background-image: linear-gradient(to right, #6366F1, #8B5CF6);
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-image 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background-color: #f3f5f9; 
+            color: #9CA3AF; 
+            padding: 48px 0; 
+        }
+
+        .footer-logo {
+            font-size: 40px;
+            font-weight: 900;
+            color: #6366F1;
+            margin-bottom: 16px; 
+        }
+
+        .footer-description {
+            max-width: 600px; 
+            margin: 0 auto 32px auto; 
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px 32px; 
+            font-size: 18px; 
+            font-weight: 500; 
+        }
+
+        .footer-nav a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) { 
+            .hero-section {
+                padding: 80px 0; 
+            }
+            .hero-content h1 {
+                font-size: 60px;
+            }
+            .action-content,
+            .focus-section,
+            .contact-section-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .action-content > div,
+            .focus-section > div,
+            .contact-section-content > div {
+                flex: 1;
+            }
+            .action-image,
+            .focus-image {
+                display: flex;
+                justify-content: flex-end;
+            }
+            .stats-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .contact-section-content {
+                align-items: flex-start;
+            }
+            .contact-form {
+                margin: 0; 
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-content h1 {
+                font-size: 72px;
+            }
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
-
-
 </head>
-<body class="dm-sans-normal">
-   <header>
-<nav>
-<h3 class="nav-logo">LOGO</h3>
-<H5><a href="#"><button>Sign Up</button></a></H5>
-</nav>
+<body>
 
-<div class="banner">
+    <!-- Hero Section  -->
+    <section class="hero-section">
+        <div class="container">
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="logo">LOGO</div>
+                <a href="#" class="signup-button">
+                    Sign Up
+                </a>
+            </nav>
 
-    <div class="banner-content">
-        <h3 class="banner-intro">Cool Dark UI Template for Webflow Agencies!</h3>
-        <a href="#"><button class="banner-btn">Stay Focused</button></a>
-    </div>
-</div>
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h3>Cool Dark UI Template for Webflow Agencies!</h3>
+                <a href="#" class="stay-focused-button">
+                    Stay Focused
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- See It in Action Section  -->
+    <section class="section-white">
+        <div class="container">
+            <div class="action-content">
+                <div class="action-text">
+                    <h2>See It in Action</h2>
+                    <p>
+                        Explore the live preview and imagine your brand in this bold new look.
+                    </p>
+                    <a href="#" class="launch-button">
+                        Launch Live Preview
+                    </a>
+                </div>
+                <div class="action-image">
+                    <img src="wc-mini.png" alt="Webflow Conf 2022 Preview">
+                </div>
+            </div>
+        </div>
+    </section>
 
-   </header> 
+    <!-- Statistics Section  -->
+    <section class="section-light-blue stats-section text-center">
+        <div class="container">
+            <h2>Joined Thousands of Productive Users</h2>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <p>50K</p>
+                    <p>Active Users</p>
+                </div>
+                <div class="stats-card" >
+                    <p>2M+</p>
+                    <p>Focus Sessions</p>
+                </div>
+                <div class="stats-card">
+                    <p>95%</p>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section  -->
+    <section class="section-white testimonials-section text-center">
+        <div class="container">
+            <h2>What our users say</h2>
+            <div class="testimonial-grid">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <!-- Star Icons  -->
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                    </div>
+                    <h3>Loved by Designers</h3>
+                    <p>
+                        "This template instantly leveled up our presence." - Studio Vertex
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="avatar.png" alt="Reviewer Avatar">
+                        <div>
+                            <p>Reviewer name</p>
+                            <p>Date</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <!-- Star Icons  -->
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                    </div>
+                    <h3>Loved by Designers</h3>
+                    <p>
+                        "This template instantly leveled up our presence." - Studio Vertex
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="avatar.png" alt="Reviewer Avatar">
+                        <div>
+                            <p>Reviewer name</p>
+                            <p>Date</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <!-- Star Icons  -->
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                        <img src="icon-star.png" alt="Star icon">
+                    </div>
+                    <h3>Loved by Designers</h3>
+                    <p>
+                        "This template instantly leveled up our presence." - Studio Vertex
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="avatar.png" alt="Reviewer Avatar">
+                        <div>
+                            <p>Reviewer name</p>
+                            <p>Date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to focus better section -->
+    <section class="section-light-blue focus-section">
+        <div class="container">
+            <div class="focus-card">
+            <div class="focus-text">
+                <h2>Ready to focus better</h2>
+                <p>
+                    This template instantly leveled up our presence." - Studio Vertex
+                </p>
+                <a href="#" class="get-started-button">
+                    Get Started Free
+                </a>
+            </div>
+           <div class="focus-image">
+                 <img src="C:\Users\user\Desktop\PHportfolio-site\wc-big.png" alt="Webflow Conf 2022 Preview">
+           </div> 
+        </div>
+        </div>
+    </section>
+
+    <!-- Let's Get in Touch Section -->
+    <section class="section-white">
+        <div class="container">
+            <div class="contact-section-content">
+                <div class="contact-heading">
+                    <h2>Let's Get in Touch</h2>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="write your message...."></textarea>
+                        </div>
+                        <button type="submit" class="contact-button">
+                            Get in Touch
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Replicates footer.png) -->
+    <footer class="footer-section text-center">
+        <div class="container">
+            <div class="footer-logo">LOGO</div>
+            <p class="footer-description">
+                Ready to elevate your online presence? Contact us today to discuss your project and discover how we can bring your vision to life.
+            </p>
+            <nav class="footer-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">How It Works</a>
+                <a href="#">Services</a>
+            </nav>
+        </div>
+    </footer>
+
 </body>
 </html>
