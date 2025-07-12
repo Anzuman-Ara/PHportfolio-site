@@ -10,12 +10,22 @@
     
     
     <style>
-        
+      /*Body styles*/  
     .dm-sans-normal{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     }
+
+    /*header stayles*/
+
+    header{
+        background-image: url("Hero-bg.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-bottom: 200px;
+    
+    }   
         /* nav styles*/
         nav{
             display: flex;
@@ -29,7 +39,7 @@
             font-size: 45px;
             color: blue;
         }
-
+    /*button styles*/
         button{
 
             background-color: blue;
@@ -38,6 +48,20 @@
             border: 0px;
             border-radius: 5px;
 
+        }
+       /*Banner styles*/
+       .banner-content{
+        max-width: 650px;
+        justify-self:center;
+       }
+        .banner-intro{
+            font-weight: 8000;
+            font-size: 45px;
+            color: black;
+            text-align: center;
+        }
+        .banner-btn{
+            margin-left: 250px;
         }
     </style>
 
@@ -49,6 +73,15 @@
 <h3 class="nav-logo">LOGO</h3>
 <H5><a href="#"><button>Sign Up</button></a></H5>
 </nav>
+
+<div class="banner">
+
+    <div class="banner-content">
+        <h3 class="banner-intro">Cool Dark UI Template for Webflow Agencies!</h3>
+        <a href="#"><button class="banner-btn">Stay Focused</button></a>
+    </div>
+</div>
+
 
    </header> 
 </body>
